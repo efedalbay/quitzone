@@ -29,20 +29,19 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 
 ## Özellikler
 
--Sigaranın zararlarının belirtilmesi
--Sigara bırakılırsa ne gibi değişimler yaşanacağının belirtilmesi
--Sigarayı bırakmaya yardımcı olacak bilgiler ve ipuçlarının belirtilmesi
--Kullanıcıların Yeşilay gibi STK'lar ile iletişime geçebilmesini sağlamak(Yeşilay'ın sitesine yönlerdirmek, Yeşilay'ın numarasının uygulama içeresine koyulması gibi.)
--Kademeli bırakmak isteyen kullanıcılar için günlük takip sistemi eklenmesi ve takvimin bu sistem ile uyumlu çalışması
--Sigarayı bırakan kullanıcılar için gün gün yaşadıkları değişimlerin belirtilmesi
--Maddi kazançlarının hesaplanması ve kullanıcıya sunulması 
--Biriken parayı ayakkabı, kıyafet, teknolojik aletler vb. gibi ürünlerin fiyatını girmesi ve biriken parasıyla bu ürünleri almaya ne kadar yaklaştığının gösterilmesi
--Motive etmek amaçlı kullanıcıdan alınan verilerle içilmeyen sigara sayısı ve günler için rozetler
--Kullanıcıların kriz takibi yapabileceği bir sistem
+- Sigaranın zararlarının belirtilmesi
+- Sigara bırakılırsa ne gibi değişimler yaşanacağının belirtilmesi
+- Sigarayı bırakmaya yardımcı olacak bilgiler ve ipuçlarının belirtilmesi
+- Kullanıcıların Yeşilay gibi STK'lar ile iletişime geçebilmesini sağlamak(Yeşilay'ın sitesine yönlerdirmek, Yeşilay'ın numarasının uygulama içeresine koyulması gibi.)
+- Kademeli bırakmak isteyen kullanıcılar için günlük takip sistemi eklenmesi ve takvimin bu sistem ile uyumlu çalışması
+- Sigarayı bırakan kullanıcılar için gün gün yaşadıkları değişimlerin belirtilmesi
+- Maddi kazançlarının hesaplanması ve kullanıcıya sunulması 
+- Biriken parayı ayakkabı, kıyafet, teknolojik aletler vb. gibi ürünlerin fiyatını girmesi ve biriken parasıyla bu ürünleri almaya ne kadar yaklaştığının gösterilmesi
+- Motive etmek amaçlı kullanıcıdan alınan verilerle içilmeyen sigara sayısı ve günler için rozetler
+- Kullanıcıların kriz takibi yapabileceği bir sistem
 
 
   
-
 ## Kullanılan Teknolojiler
 
 - Flutter
@@ -51,7 +50,6 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 
 
   
-
 ## Başlangıç
 
   
@@ -64,7 +62,6 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 
 
   
-
 ### Kurulum Adımları
 
 1. Projeyi bilgisayarınıza indirin:
