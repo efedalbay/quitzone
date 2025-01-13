@@ -1,2 +1,3 @@
 # quitsmoke
-My Flutter App
+
+A new Flutter project.
