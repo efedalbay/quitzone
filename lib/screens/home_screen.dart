@@ -9,10 +9,10 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // AppBar
       appBar: AppBar(
-        title: const Text('Ana Sayfa'),
+      title:  const Text('Ana Sayfa'),
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.bell),
+            icon: const Icon(Icons.notifications),
             onPressed: () {},
           ),
         ],
@@ -25,20 +25,20 @@ class HomeScreen extends StatelessWidget {
             // Drawer Header
             Container(
               height: 200,
-              color: Colors.blue,
-              child: Column(
+              color: Colors.black,
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Icon(
+                  Icon(
                     CupertinoIcons.person_circle,
                     size: 80,
-                    color: Colors.white,
+                    color: Colors.black,
                   ),
-                  const SizedBox(height: 10),
-                  const Text(
+                  SizedBox(height: 10),
+                  Text(
                     'Kullanıcı Adı',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 18,
                     ),
                   ),
@@ -80,15 +80,15 @@ class HomeScreen extends StatelessWidget {
       bottomNavigationBar: BottomNavigationBar(
         items: const [
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.home),
+            icon: Icon(Icons.calendar_month),
+            label: 'Takvim',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
             label: 'Ana Sayfa',
           ),
           BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.search),
-            label: 'Keşfet',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(CupertinoIcons.person),
+            icon: Icon(Icons.person),
             label: 'Profil',
           ),
         ],
