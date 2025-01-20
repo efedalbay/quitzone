@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/bottom_menu.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -9,6 +10,7 @@ class ProfileScreen extends StatelessWidget {
       body: Center(
         child: Text("Profil ekranı"),
       ),
+      bottomNavigationBar: BottomMenu(),
     );
   }
 }

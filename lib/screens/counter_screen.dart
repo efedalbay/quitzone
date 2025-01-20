@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class PrizeScreen extends StatelessWidget {
-  const PrizeScreen({super.key});
+class CounterScreen extends StatelessWidget {
+  const CounterScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text("Ödül ekranı"),
+        child: Text("Sayaç ekranı"),
       ),
     );
   }

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:go_router/go_router.dart';
+import 'package:quitsmoke/routes/app_router.dart';
+import '../widgets/bottom_menu.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -9,11 +12,15 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // AppBar
       appBar: AppBar(
-      title:  const Text('Ana Sayfa'),
+        title: const Center(
+          child: Text('Ana Sayfa')
+          ),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),
-            onPressed: () {},
+            onPressed: () {
+              context.go("/notifications");
+            },
           ),
         ],
       ),
@@ -24,19 +31,14 @@ class HomeScreen extends StatelessWidget {
           children: [
             // Drawer Header
             Container(
-              height: 200,
-              color: Colors.black,
-              child: const Column(
+              height: 250,
+              child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Icon(
-                    CupertinoIcons.person_circle,
-                    size: 80,
-                    color: Colors.black,
-                  ),
-                  SizedBox(height: 10),
-                  Text(
-                    'Kullanıcı Adı',
+                  Image.asset("assets/images/logo2.jpg"),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Quit Zone',
                     style: TextStyle(
                       color: Colors.black,
                       fontSize: 18,
@@ -47,17 +49,59 @@ class HomeScreen extends StatelessWidget {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(CupertinoIcons.home),
+              leading: const Icon(Icons.home),
               title: const Text('Ana Sayfa'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/home");
               },
             ),
             ListTile(
-              leading: const Icon(CupertinoIcons.settings),
+              leading: const Icon(Icons.person),
+              title: const Text('Profil'),
+              onTap: () {
+                context.go("/profile");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.calendar_month),
+              title: const Text('Takvim'),
+              onTap: () {
+                context.go("/calendar");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.schedule),
+              title: const Text('Zaman'),
+              onTap: () {
+                context.go("/time");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.smoke_free),
+              title: const Text('Sayaçlar'),
+              onTap: () {
+                context.go("/counter");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.outlined_flag),
+              title: const Text('Hedefler'),
+              onTap: () {
+                context.go("/goals");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.emoji_events),
+              title: const Text('Başarımlar'),
+              onTap: () {
+                context.go("/achievement");
+              },
+            ),
+            ListTile(
+              leading :const Icon(Icons.settings),
               title: const Text('Ayarlar'),
               onTap: () {
-                Navigator.pop(context);
+                context.go("/settings");
               },
             ),
           ],
@@ -77,25 +121,7 @@ class HomeScreen extends StatelessWidget {
       ),
 
       // Alt navigasyon çubuğu
-      bottomNavigationBar: BottomNavigationBar(
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: 'Takvim',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Ana Sayfa',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person),
-            label: 'Profil',
-          ),
-        ],
-        onTap: (index) {
-          // Navigasyon işlemleri buraya gelecek
-        },
-      ),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

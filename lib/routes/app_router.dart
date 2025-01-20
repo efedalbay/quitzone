@@ -1,13 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import '../screens/calendar.dart';
+import '../screens/achievement_screen.dart';
+import '../screens/calendar_screen.dart';
+import '../screens/counter_screen.dart';
+import '../screens/goal_screen.dart';
+import '../screens/health_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/loading_screen.dart';
-import '../screens/notification.dart';
-import '../screens/prize.dart';
-import '../screens/profile.dart';
-import '../screens/set.dart';
-import '../screens/time.dart';
+import '../screens/login_screen.dart';
+import '../screens/notification_screen.dart';
+import '../screens/profile_screen.dart';
+import '../screens/register_screen.dart';
+import '../screens/settings_screen.dart';
+import '../screens/time_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
@@ -22,8 +27,8 @@ final router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/prize',
-      builder: (context, state) => const PrizeScreen(),
+      path: '/achievement',
+      builder: (context, state) => const AchievementScreen(),
     ),
     GoRoute(
       path: '/profile',
@@ -31,7 +36,7 @@ final router = GoRouter(
     ),
     GoRoute(
       path: '/settings',
-      builder: (context, state) => const SetScreen(),
+      builder: (context, state) => const SettingsScreen(),
     ),
     GoRoute(
       path: '/time',
@@ -44,6 +49,26 @@ final router = GoRouter(
     GoRoute(
       path: '/notifications',
       builder: (context, state) => const NotificationScreen(),
+    ),
+    GoRoute(
+      path: '/login',
+      builder: (context, state) => const LoginScreen(),
+    ),
+    GoRoute(
+      path: '/register',
+      builder: (context, state) => const RegisterScreen(),
+    ),
+    GoRoute(
+      path: '/health',
+      builder: (context, state) => const HealthScreen(),
+    ),
+    GoRoute(
+      path: '/goals',
+      builder: (context, state) => const GoalScreen(),
+    ),
+    GoRoute(
+      path: '/counter',
+      builder: (context, state) => const CounterScreen(),
     ),
   ],
 );
