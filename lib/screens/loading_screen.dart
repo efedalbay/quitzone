@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
+import 'package:dotlottie_loader/dotlottie_loader.dart';
+import 'package:lottie/lottie.dart';
 
 class LoadingScreen extends StatelessWidget {
   const LoadingScreen({super.key});
@@ -8,7 +10,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.black,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -19,7 +21,7 @@ class LoadingScreen extends StatelessWidget {
               children: [
                 // Logo bölümü
                 InkWell(
-                  onTap: () => context.go ("/home"),
+                  onTap: () => context.go("/register"),
                   child: Container(
                     width: 150,
                     height: 150,
@@ -29,26 +31,26 @@ class LoadingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                
+
                 const SizedBox(height: 30),
-                
-                // Yükleme ikonu
-                const Icon(
-                  CupertinoIcons.arrow_2_circlepath,
-                  size: 40,
-                  color: Colors.blue,
+
+                // yükleme ikonu
+                InkWell(
+                onTap: () => context.go("/register"),
+                child: SizedBox(
+                width: 300,
+                child: DotLottieLoader.fromAsset(
+                  "assets/motions/loader.lottie",
+                  frameBuilder: (BuildContext ctx, DotLottie? dotlottie) {
+                    if (dotlottie != null) {
+                      return Lottie.memory(dotlottie.animations.values.single);
+                    } else {
+                      return Container();
+                    }
+                  },
                 ),
-                
-                const SizedBox(height: 20),
-                
-                // Yükleniyor yazısı
-                const Text(
-                  'Yükleniyor...',
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
+              ),
+            ),
               ],
             ),
           ),
