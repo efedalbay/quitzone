@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
-import 'package:quitsmoke/routes/app_router.dart';
+import 'package:provider/provider.dart';
 import 'package:table_calendar/table_calendar.dart';
+import '../themes/themes.dart';
 import '../widgets/bottom_menu.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -13,14 +14,19 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // AppBar
       appBar: AppBar(
-        iconTheme: const IconThemeData(color: Color(0xFF333333),),
         title: const Center(child: Text('Ana Sayfa')),
-        backgroundColor:  const Color(0xFFBB86FC),
+        backgroundColor: const Color(0xFFBB86FC),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),
             onPressed: () {
               context.go("/notifications");
+            },
+          ),
+          IconButton(
+            icon: const Icon(CupertinoIcons.moon),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
             },
           ),
         ],
@@ -98,6 +104,8 @@ class HomeScreen extends StatelessWidget {
                 context.go("/achievement");
               },
             ),
+            const Spacer(),
+            const Divider(),
             ListTile(
               leading: const Icon(Icons.settings),
               title: const Text('Ayarlar'),
@@ -115,13 +123,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text(
-              "Sigarasız geçen zaman",
-              style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
+            const Text("Sigarasız geçen zaman"),
             const SizedBox(height: 16),
             // Zaman Gösterimi
             Row(
@@ -145,67 +147,102 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             // Sağlık Durumu ve Para Bilgileri
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Text("İçilmeyen Sigaralar"),
-                    Icon(Icons.smoke_free),
-                    Text("3425")
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text("Biriktirilen Para"),
-                    Icon(Icons.currency_lira),
-                    Text("12697₺"),
-                  ],
-                ),
-              ],
+            Container(
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment:CrossAxisAlignment.start, 
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("İçilmeyen Sigaralar",
+                            textAlign: TextAlign.center),
+                        SizedBox(height:4), 
+                        Icon(Icons.smoke_free),
+                        SizedBox(height: 4),
+                        Text("3425"),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Biriktirilen Para", textAlign: TextAlign.center),
+                        SizedBox(height: 4),
+                        Icon(Icons.currency_lira),
+                        SizedBox(height: 4),
+                        Text("12697₺"),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Text("Sağlık"),
-                    Icon(Icons.favorite),
-                    Text("Sağlık Bilgileri"),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text("Kazanılan Zaman"),
-                    Icon(Icons.timer),
-                    Text("Sigara İçmeyerek 4 Gün Kazandınız.")
-                  ],
-                ),
-              ],
+            Container(
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Sağlık", textAlign: TextAlign.center),
+                        SizedBox(height: 4),
+                        Icon(Icons.favorite),
+                        SizedBox(height: 4),
+                        Text("Sağlık Bilgileri"),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Kazanılan Zaman", textAlign: TextAlign.center),
+                        SizedBox(height: 4),
+                        Icon(Icons.timer),
+                        SizedBox(height: 4),
+                        Text("4 Gün Kazandınız."),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
             const SizedBox(height: 20),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Column(
-                  children: [
-                    Text("Başarılar"),
-                    Icon(Icons.emoji_events),
-                    Text("3 Başarımınız Var."),
-                  ],
-                ),
-                Column(
-                  children: [
-                    Text("Hedefler"),
-                    Icon(Icons.outlined_flag),
-                    Text("2 Hedefinizi Başardınız."),
-                  ],
-                ),
-              ],
+            Container(
+              child: const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Başarılar", textAlign: TextAlign.center),
+                        SizedBox(height: 4),
+                        Icon(Icons.emoji_events),
+                        SizedBox(height: 4),
+                        Text("3 Başarımınız Var."),
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Column(
+                      children: [
+                        Text("Hedefler", textAlign: TextAlign.center),
+                        SizedBox(height: 4),
+                        Icon(Icons.outlined_flag),
+                        SizedBox(height: 4),
+                        Text("2 Hedefinizi Başardınız."),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
             ),
+
             //Takvim
-            const SizedBox(height: 20),
+            const SizedBox(height: 6),
             TableCalendar(
               firstDay: DateTime.utc(2000, 1, 1),
               lastDay: DateTime.utc(2100, 12, 31),
@@ -217,7 +254,7 @@ class HomeScreen extends StatelessWidget {
               ),
               calendarStyle: const CalendarStyle(
                 todayDecoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.purple,
                   shape: BoxShape.circle,
                 ),
                 selectedDecoration: BoxDecoration(
@@ -240,9 +277,9 @@ class HomeScreen extends StatelessWidget {
       children: [
         Text(
           value,
-          style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
         ),
-        Text(label, style: const TextStyle(fontSize: 14)),
+        Text(label, style: const TextStyle(fontSize: 10)),
       ],
     );
   }

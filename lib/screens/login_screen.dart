@@ -1,6 +1,9 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:go_router/go_router.dart';
+import 'package:provider/provider.dart';
+import '../themes/themes.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -18,8 +21,6 @@ class _LoginScreenState extends State<LoginScreen> {
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(
           content: Text("Bilgileriniz Giriniz"),
-          // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-          // margin: EdgeInsets.all(20),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
           showCloseIcon: true,
@@ -30,8 +31,6 @@ class _LoginScreenState extends State<LoginScreen> {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text("Sifre Minimum 8 haneli olabilir."),
-            // action: SnackBarAction(label: "Kapat", onPressed: () {}),
-            // margin: EdgeInsets.all(20),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,
             showCloseIcon: true,
@@ -46,7 +45,59 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Center(child: Text('Giriş Yap')),
+        actions: [
+          IconButton(
+            icon: const Icon(CupertinoIcons.moon),
+            onPressed: () {
+              context.read<ThemeProvider>().toggleTheme();
+            },
+          ),
+        ],
+      ),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            // Drawer Header
+            Container(
+              height: 250,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset("assets/images/logo2.jpg"),
+                  const SizedBox(height: 10),
+                  const Text('Quit Zone',),
+                ],
+              ),
+            ),
+            // Menü öğeleri
+            ListTile(
+              leading: const Icon(Icons.lock),
+              title: const Text("Kayıt ol"),
+              onTap: () {
+                context.go("/register");
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.lock_open),
+              title: const Text("Giriş Yap"),
+              onTap: () {
+                context.go("/login");
+              },
+            ),
+            const Spacer(),
+            const Divider(),
+            ListTile(
+              leading: const Icon(Icons.settings),
+              title: const Text('Ayarlar'),
+              onTap: () {
+                context.go("/settings");
+              },
+            ),
+          ],
+        ),
+      ),
       body: Center(
         child: SizedBox(
           width: 300,
