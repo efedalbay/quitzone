@@ -19,7 +19,7 @@ class _LoginScreenState extends State<LoginScreen> {
   girisYap() {
     if (epostaYonetici.text.isEmpty || sifreYonetici.text.isEmpty) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
+        const SnackBar(
           content: Text("Bilgileriniz Giriniz"),
           behavior: SnackBarBehavior.floating,
           backgroundColor: Colors.red,
@@ -29,7 +29,7 @@ class _LoginScreenState extends State<LoginScreen> {
     } else {
       if (sifreYonetici.text.length < 8) {
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
+          const SnackBar(
             content: Text("Sifre Minimum 8 haneli olabilir."),
             behavior: SnackBarBehavior.floating,
             backgroundColor: Colors.red,

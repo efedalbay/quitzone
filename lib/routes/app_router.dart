@@ -8,7 +8,6 @@ import '../screens/health_screen.dart';
 import '../screens/home_screen.dart';
 import '../screens/loading_screen.dart';
 import '../screens/login_screen.dart';
-import '../screens/notification_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/register_screen.dart';
 import '../screens/settings_screen.dart';
@@ -45,10 +44,6 @@ final router = GoRouter(
     GoRoute(
       path: '/calendar',
       builder: (context, state) => const CalendarScreen(),
-    ),
-    GoRoute(
-      path: '/notifications',
-      builder: (context, state) => const NotificationScreen(),
     ),
     GoRoute(
       path: '/login',

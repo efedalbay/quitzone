@@ -16,12 +16,6 @@ class ProfileScreen extends StatelessWidget {
         backgroundColor:  const Color(0xFFBB86FC),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              context.go("/notifications");
-            },
-          ),
-          IconButton(
             icon: Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();

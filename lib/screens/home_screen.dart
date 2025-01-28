@@ -18,12 +18,6 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: const Color(0xFFBB86FC),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications),
-            onPressed: () {
-              context.go("/notifications");
-            },
-          ),
-          IconButton(
             icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
@@ -148,31 +142,42 @@ class HomeScreen extends StatelessWidget {
             const SizedBox(height: 24),
             // Sağlık Durumu ve Para Bilgileri
             Container(
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                crossAxisAlignment:CrossAxisAlignment.start, 
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("İçilmeyen Sigaralar",
-                            textAlign: TextAlign.center),
-                        SizedBox(height:4), 
-                        Icon(Icons.smoke_free),
-                        SizedBox(height: 4),
-                        Text("3425"),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/counter");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("İçilmeyen Sigaralar",
+                              textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.smoke_free),
+                          SizedBox(height: 4),
+                          Text("3425"),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("Biriktirilen Para", textAlign: TextAlign.center),
-                        SizedBox(height: 4),
-                        Icon(Icons.currency_lira),
-                        SizedBox(height: 4),
-                        Text("12697₺"),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/counter");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("Biriktirilen Para",
+                              textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.currency_lira),
+                          SizedBox(height: 4),
+                          Text("12697₺"),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -180,30 +185,40 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Container(
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("Sağlık", textAlign: TextAlign.center),
-                        SizedBox(height: 4),
-                        Icon(Icons.favorite),
-                        SizedBox(height: 4),
-                        Text("Sağlık Bilgileri"),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/health");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("Sağlık", textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.favorite),
+                          SizedBox(height: 4),
+                          Text("Sağlık Bilgileri"),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("Kazanılan Zaman", textAlign: TextAlign.center),
-                        SizedBox(height: 4),
-                        Icon(Icons.timer),
-                        SizedBox(height: 4),
-                        Text("4 Gün Kazandınız."),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/time");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("Kazanılan Zaman", textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.timer),
+                          SizedBox(height: 4),
+                          Text("4 Gün Kazandınız."),
+                        ],
+                      ),
                     ),
                   ),
                 ],
@@ -211,30 +226,40 @@ class HomeScreen extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             Container(
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("Başarılar", textAlign: TextAlign.center),
-                        SizedBox(height: 4),
-                        Icon(Icons.emoji_events),
-                        SizedBox(height: 4),
-                        Text("3 Başarımınız Var."),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/achievement");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("Başarılar", textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.emoji_events),
+                          SizedBox(height: 4),
+                          Text("3 Başarımınız Var."),
+                        ],
+                      ),
                     ),
                   ),
                   Expanded(
-                    child: Column(
-                      children: [
-                        Text("Hedefler", textAlign: TextAlign.center),
-                        SizedBox(height: 4),
-                        Icon(Icons.outlined_flag),
-                        SizedBox(height: 4),
-                        Text("2 Hedefinizi Başardınız."),
-                      ],
+                    child: GestureDetector(
+                      onTap: () {
+                        context.go("/goals");
+                      },
+                      child: const Column(
+                        children: [
+                          Text("Hedefler", textAlign: TextAlign.center),
+                          SizedBox(height: 4),
+                          Icon(Icons.outlined_flag),
+                          SizedBox(height: 4),
+                          Text("2 Hedefinizi Başardınız."),
+                        ],
+                      ),
                     ),
                   ),
                 ],

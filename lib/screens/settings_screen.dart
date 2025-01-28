@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
@@ -20,9 +21,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
         backgroundColor:  const Color(0xFFBB86FC),
         actions: [
           IconButton(
-            icon: const Icon(Icons.notifications),
+            icon: Icon(CupertinoIcons.moon),
             onPressed: () {
-              context.go("/notifications");
+              context.read<ThemeProvider>().toggleTheme();
             },
           ),
         ],
