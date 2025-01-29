@@ -51,42 +51,60 @@ class CalendarScreen extends StatelessWidget {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: Icon(
+                Icons.home,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ana Sayfa'),
               onTap: () {
                 context.go("/home");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: Icon(
+                Icons.person,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Profil'),
               onTap: () {
                 context.go("/profile");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.calendar_month),
+              leading: Icon(
+                Icons.calendar_month,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Takvim'),
               onTap: () {
                 context.go("/calendar");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.smoke_free),
+              leading: Icon(
+                Icons.smoke_free,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Sayaçlar'),
               onTap: () {
                 context.go("/counter");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.outlined_flag),
+              leading: Icon(
+                Icons.outlined_flag,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Hedefler'),
               onTap: () {
                 context.go("/goals");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.emoji_events),
+              leading: Icon(
+                Icons.emoji_events,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Başarımlar'),
               onTap: () {
                 context.go("/achievement");
@@ -95,7 +113,10 @@ class CalendarScreen extends StatelessWidget {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(
+                Icons.settings,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");

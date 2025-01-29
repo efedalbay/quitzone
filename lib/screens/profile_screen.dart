@@ -37,7 +37,7 @@ class ProfileScreen extends StatelessWidget {
               currentAccountPicture: CircleAvatar(
                 backgroundColor: Theme.of(context).colorScheme.primaryContainer,
                 child: Icon(
-                  CupertinoIcons.person_circle,
+                  Icons.person,
                   size: 50,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
@@ -50,42 +50,60 @@ class ProfileScreen extends StatelessWidget {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: Icon(
+                Icons.home,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ana Sayfa'),
               onTap: () {
                 context.go("/home");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: Icon(
+                Icons.person,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Profil'),
               onTap: () {
                 context.go("/profile");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.calendar_month),
+              leading: Icon(
+                Icons.calendar_month,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Takvim'),
               onTap: () {
                 context.go("/calendar");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.smoke_free),
+              leading: Icon(
+                Icons.smoke_free,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Sayaçlar'),
               onTap: () {
                 context.go("/counter");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.outlined_flag),
+              leading: Icon(
+                Icons.outlined_flag,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Hedefler'),
               onTap: () {
                 context.go("/goals");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.emoji_events),
+              leading: Icon(
+                Icons.emoji_events,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Başarımlar'),
               onTap: () {
                 context.go("/achievement");
@@ -94,7 +112,10 @@ class ProfileScreen extends StatelessWidget {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(
+                Icons.settings,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");
@@ -106,26 +127,28 @@ class ProfileScreen extends StatelessWidget {
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const Card(
+          Card(
             child: Padding(
               padding: EdgeInsets.all(16),
               child: Column(
                 children: [
-                  CircleAvatar(
+                  const CircleAvatar(
                     radius: 50,
                     child: Text(
                       "EED",
                       style: TextStyle(fontSize: 24),
                     ),
                   ),
-                  SizedBox(height: 16),
+                  const SizedBox(height: 16),
                   ListTile(
-                    leading: Icon(Icons.person),
-                    title: Text("Erva Efe Dalbay"),
-                    subtitle: Text("Ad Soyad"),
+                    leading: Icon(Icons.person,
+                    color: Theme.of(context).colorScheme.primary,),
+                    title: const Text("Erva Efe Dalbay"),
+                    subtitle: const Text("Ad Soyad"),
                   ),
                   ListTile(
-                    leading: Icon(Icons.email),
+                    leading: Icon(Icons.email,
+                    color: Theme.of(context).colorScheme.primary,),
                     title: Text("dalbayefe68@gmail.com"),
                     subtitle: Text("E-posta"),
                   ),
