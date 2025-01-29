@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
-import 'package:table_calendar/table_calendar.dart';
 import '../themes/themes.dart';
 import '../widgets/bottom_menu.dart';
 
@@ -73,13 +72,6 @@ class HomeScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.schedule),
-              title: const Text('Zaman'),
-              onTap: () {
-                context.go("/time");
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.smoke_free),
               title: const Text('Sayaçlar'),
               onTap: () {
@@ -119,30 +111,137 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Text(
-              "Sigarasız geçen zaman",
-              style: Theme.of(context).textTheme.headlineMedium,
-              
-            ),
-            const SizedBox(height: 16),
-            // Zaman Gösterimi
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                timeBox("0", "Yıl"),
-                timeBox("9", "Ay"),
-                timeBox("4", "Hafta"),
-                timeBox("0", "Gün"),
-              ],
-            ),
-            const SizedBox(height: 16),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                timeBox("22", "Saat"),
-                timeBox("24", "Dakika"),
-                timeBox("39", "Saniye"),
-                timeBox("325", "Milisn."),
+                Text(
+                  "Sigarasız geçen zaman",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "0",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Yıl",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "9",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Ay",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "4",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Hafta",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "0",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Gün",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "22",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Saat",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "24",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Dakika",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text("39",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          Text("Saniye",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text("325",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          Text("Milisn.",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
             const SizedBox(height: 24),
@@ -160,8 +259,7 @@ class HomeScreen extends StatelessWidget {
                       child: const Column(
                         children: [
                           Text("İçilmeyen Sigaralar",
-                              textAlign: TextAlign.center
-                              ),
+                              textAlign: TextAlign.center),
                           SizedBox(height: 4),
                           Icon(Icons.smoke_free),
                           SizedBox(height: 4),
@@ -215,7 +313,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        context.go("/time");
+                        context.go("/counter");
                       },
                       child: const Column(
                         children: [
@@ -430,19 +528,6 @@ class HomeScreen extends StatelessWidget {
       ),
       // Alt navigasyon çubuğu
       bottomNavigationBar: const BottomMenu(),
-    );
-  }
-
-  //Zaman Bilgisi Widget'ı
-  Widget timeBox(String value, String label) {
-    return Column(
-      children: [
-        Text(
-          value,
-          style: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ),
-        Text(label, style: const TextStyle(fontSize: 10)),
-      ],
     );
   }
 }

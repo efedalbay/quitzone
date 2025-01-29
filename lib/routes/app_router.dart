@@ -11,7 +11,6 @@ import '../screens/login_screen.dart';
 import '../screens/profile_screen.dart';
 import '../screens/register_screen.dart';
 import '../screens/settings_screen.dart';
-import '../screens/time_screen.dart';
 
 // Router yapılandırması
 final router = GoRouter(
@@ -36,10 +35,6 @@ final router = GoRouter(
     GoRoute(
       path: '/settings',
       builder: (context, state) => const SettingsScreen(),
-    ),
-    GoRoute(
-      path: '/time',
-      builder: (context, state) => const TimeScreen(),
     ),
     GoRoute(
       path: '/calendar',

@@ -71,13 +71,6 @@ class HealthScreen extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.schedule),
-              title: const Text('Zaman'),
-              onTap: () {
-                context.go("/time");
-              },
-            ),
-            ListTile(
               leading: const Icon(Icons.smoke_free),
               title: const Text('Sayaçlar'),
               onTap: () {

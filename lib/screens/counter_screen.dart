@@ -53,7 +53,7 @@ class _CounterScreenState extends State<CounterScreen> {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -79,13 +79,6 @@ class _CounterScreenState extends State<CounterScreen> {
               title: const Text('Takvim'),
               onTap: () {
                 context.go("/calendar");
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.schedule),
-              title: const Text('Zaman'),
-              onTap: () {
-                context.go("/time");
               },
             ),
             ListTile(
@@ -126,55 +119,206 @@ class _CounterScreenState extends State<CounterScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Row(
+            Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Sigara Sayacı"),
-                Icon(Icons.smoke_free),
+                Text(
+                  "Sigarasız geçen zaman",
+                  style: Theme.of(context).textTheme.headlineMedium,
+                ),
+                const SizedBox(height: 20),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "0",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Yıl",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "9",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Ay",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "4",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Hafta",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "0",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Gün",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "22",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            "Saat",
+                            style: Theme.of(context).textTheme.headlineMedium,
+                          ),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text(
+                            "24",
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          Text("Dakika",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text("39",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          Text("Saniye",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const Text("325",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold)),
+                          Text("Milisn.",
+                              style:
+                                  Theme.of(context).textTheme.headlineMedium),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text("Günlük İçilen Sigara Miktarı: 12 Adet"),
-              ],
-            ),
-            const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                Text("Toplam İçilmeyen Sigara Miktarı: 3425 Adet"),
-              ],
-            ),
-            const SizedBox(height: 58,),
-            const Row(
+            const SizedBox(height: 24),
+            const Divider(),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Para Sayacı"),
-                Icon(Icons.currency_lira),
+                Text("Sigara Sayacı",
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const Icon(
+                  Icons.smoke_free,
+                  size: 35,
+                ),
               ],
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                Text("Günlük Sigara Maliyeti:"),
+                Text("Günlük İçilen Sigara Miktarı: 12",
+                    style: Theme.of(context).textTheme.headlineSmall),
               ],
             ),
-            const Row(
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text("Toplam İçilmeyen Sigara Miktarı: 3425",
+                    style: Theme.of(context).textTheme.headlineSmall),
+              ],
+            ),
+            const SizedBox(
+              height: 24,
+            ),
+            const Divider(),
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Toplam Biriktirilen Para: 12697"),
-                Icon(Icons.currency_lira),
+                Text("Para Sayacı",
+                style: Theme.of(context).textTheme.headlineMedium),
+                const Icon(Icons.currency_lira,size: 35,),
               ],
             ),
-            const SizedBox(height: 58),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Günlük Sigara Maliyeti:48",
+                style: Theme.of(context).textTheme.headlineSmall),
+                const Icon(Icons.currency_lira,size: 25,),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text("Toplam Biriktirilen Para: 12697",
+                style: Theme.of(context).textTheme.headlineSmall),
+                const Icon(Icons.currency_lira,size: 25,),
+              ],
+            ),
+            const SizedBox(height: 24),
+            const Divider(),
             Column(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const Text("Miktarlar"),
+                Text("Miktarlar",
+                style: Theme.of(context).textTheme.headlineMedium),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Bir Günde İçilen Sigara Miktarı:"),
+                    Text("Bir Günde İçilen Sigara Miktarı:",
+                    style: Theme.of(context).textTheme.headlineSmall),
                     IconButton(
                       onPressed: azalt,
                       icon: const Icon(Icons.remove, color: Colors.red),
@@ -190,12 +334,13 @@ class _CounterScreenState extends State<CounterScreen> {
                     ),
                   ],
                 ),
-                const Row(
+                Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Kullanılan Sigaranın Paket Fiyatı:"),
-                    SizedBox(
-                      width: 100,
+                    Text("Kullanılan Sigaranın Paket Fiyatı:",
+                    style: Theme.of(context).textTheme.headlineSmall),
+                    const SizedBox(
+                      width: 90,
                       child: TextField(
                         decoration: InputDecoration(
                           hintText: "Fiyatı Giriniz",
@@ -204,6 +349,8 @@ class _CounterScreenState extends State<CounterScreen> {
                     ),
                   ],
                 ),
+                const SizedBox(height: 24,),
+                const Divider(),
               ],
             ),
           ],
