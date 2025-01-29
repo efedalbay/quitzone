@@ -103,8 +103,65 @@ class CalendarScreen extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
-        child: Text("Takvim ekranı"),
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: Icon(Icons.arrow_left),
+                  onPressed: () {},
+                ),
+                const Text(
+                  "Ocak 2025",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_right),
+                  onPressed: () {},
+                ),
+              ],
+            ),
+            const SizedBox(height: 12),
+            const Row(
+              children: [
+                Expanded(child: Center(child: Text("Pzt"))),
+                Expanded(child: Center(child: Text("Sal"))),
+                Expanded(child: Center(child: Text("Çrş"))),
+                Expanded(child: Center(child: Text("Prş"))),
+                Expanded(child: Center(child: Text("Cum"))),
+                Expanded(child: Center(child: Text("Cmt"))),
+                Expanded(child: Center(child: Text("Pzr"))),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Column(
+              children: [
+                for (var week in [
+                  ["29", "30", "31", "1", "2", "3", "4"],
+                  ["5", "6", "7", "8", "9", "10", "11"],
+                  ["12", "13", "14", "15", "16", "17", "18"],
+                  ["19", "20", "21", "22", "23", "24", "25"],
+                  ["26", "27", "28", "29", "30", "31", "1"]
+                ])
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 6.0),
+                    child: Row(
+                      children: [
+                        for (var day in week)
+                          Expanded(child: Center(child: Text(day))),
+                      ],
+                    ),
+                  ),
+              ],
+            ),
+            Divider(),
+            
+          ],
+        ),
       ),
       bottomNavigationBar: BottomMenu(),
     );

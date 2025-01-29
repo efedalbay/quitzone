@@ -107,7 +107,7 @@ class HomeScreen extends StatelessWidget {
 
       // Ana içerik
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(14.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -244,7 +244,8 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 18),
+            Divider(),
             // Sağlık Durumu ve Para Bilgileri
             Container(
               child: Row(
@@ -256,14 +257,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/counter");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("İçilmeyen Sigaralar",
-                              textAlign: TextAlign.center),
+                          Text(
+                            "İçilmeyen Sigaralar",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.smoke_free),
+                          Icon(
+                            Icons.smoke_free,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("3425"),
+                          Text(
+                            "3425",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -273,14 +285,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/counter");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("Biriktirilen Para",
-                              textAlign: TextAlign.center),
+                          Text(
+                            "Biriktirilen Para",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.currency_lira),
+                          Icon(
+                            Icons.currency_lira,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("12697₺"),
+                          Text(
+                            "12697₺",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -288,7 +311,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -299,13 +322,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/health");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("Sağlık", textAlign: TextAlign.center),
+                          Text(
+                            "Sağlık",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.favorite),
+                          Icon(
+                            Icons.favorite,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("Sağlık Bilgileri"),
+                          Text(
+                            "Sağlık Bilgileri",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -315,13 +350,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/counter");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("Kazanılan Zaman", textAlign: TextAlign.center),
+                          Text(
+                            "Kazanılan Zaman",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.timer),
+                          Icon(
+                            Icons.timer,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("4 Gün Kazandınız."),
+                          Text(
+                            "4 Gün Kazandınız.",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -329,7 +376,7 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: 20),
+            const SizedBox(height: 15),
             Container(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -340,13 +387,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/achievement");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("Başarılar", textAlign: TextAlign.center),
+                          Text(
+                            "Başarılar",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.emoji_events),
+                          Icon(
+                            Icons.emoji_events,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("3 Başarımınız Var."),
+                          Text(
+                            "3 Başarımınız Var.",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -356,13 +415,25 @@ class HomeScreen extends StatelessWidget {
                       onTap: () {
                         context.go("/goals");
                       },
-                      child: const Column(
+                      child: Column(
                         children: [
-                          Text("Hedefler", textAlign: TextAlign.center),
+                          Text(
+                            "Hedefler",
+                            textAlign: TextAlign.center,
+                            style: Theme.of(context).textTheme.headlineSmall,
+                          ),
                           SizedBox(height: 4),
-                          Icon(Icons.outlined_flag),
+                          Icon(
+                            Icons.outlined_flag,
+                            size: 30,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                           SizedBox(height: 4),
-                          Text("2 Hedefinizi Başardınız."),
+                          Text(
+                            "2 Hedefinizi Başardınız.",
+                            style: TextStyle(
+                                fontSize: 14, fontWeight: FontWeight.bold),
+                          ),
                         ],
                       ),
                     ),
@@ -372,7 +443,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             //Takvim
-            const SizedBox(height: 6),
+            Divider(),
             // ai
             // TableCalendar(
             //   firstDay: DateTime.utc(2000, 1, 1),
@@ -490,7 +561,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
             const Row(
               children: [
                 Expanded(child: Center(child: Text("Pzt"))),
@@ -499,10 +570,10 @@ class HomeScreen extends StatelessWidget {
                 Expanded(child: Center(child: Text("Prş"))),
                 Expanded(child: Center(child: Text("Cum"))),
                 Expanded(child: Center(child: Text("Cmt"))),
-                Expanded(child: Center(child: Text("Pazar"))),
+                Expanded(child: Center(child: Text("Pzr"))),
               ],
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 10),
             Column(
               children: [
                 for (var week in [
