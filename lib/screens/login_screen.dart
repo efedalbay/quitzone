@@ -46,10 +46,16 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Giriş Yap')),
+        title: Center(
+            child: Text(
+          'Giriş Yap',
+          style: Theme.of(context).textTheme.headlineLarge,
+        )),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -61,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,
@@ -76,14 +82,16 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.lock),
+              leading: Icon(Icons.lock,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text("Kayıt ol"),
               onTap: () {
                 context.go("/register");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.lock_open),
+              leading: Icon(Icons.lock_open,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text("Giriş Yap"),
               onTap: () {
                 context.go("/login");
@@ -92,7 +100,8 @@ class _LoginScreenState extends State<LoginScreen> {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(Icons.settings,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");

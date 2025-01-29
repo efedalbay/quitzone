@@ -15,13 +15,14 @@ class ProfileScreen extends StatelessWidget {
         title: Center(
           child: Text(
             'Ana Sayfa',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -35,7 +36,7 @@ class ProfileScreen extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   Icons.person,
                   size: 50,

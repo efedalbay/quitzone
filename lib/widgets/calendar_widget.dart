@@ -18,17 +18,23 @@ class CalendarWidget extends StatelessWidget {
     return Card(
       elevation: 0,
       child: ListTile(
-        hoverColor:Theme.of(context).colorScheme.onSecondary,
+        hoverColor: Theme.of(context).colorScheme.onSecondary,
         tileColor: Theme.of(context).colorScheme.secondary,
         onTap: onTap,
         leading: CircleAvatar(
           backgroundColor: Theme.of(context).colorScheme.primary,
           child: Icon(icon, color: Theme.of(context).colorScheme.onPrimary),
         ),
-        title: Text(title),
+        title: Text(
+          title,
+          style: Theme.of(context).textTheme.headlineMedium,
+        ),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.touch_app, size: 25,
-        color: Theme.of(context).colorScheme.primary,),
+        trailing: Icon(
+          Icons.touch_app,
+          size: 25,
+          color: Theme.of(context).colorScheme.primary,
+        ),
       ),
     );
   }

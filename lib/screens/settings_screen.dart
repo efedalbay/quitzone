@@ -19,13 +19,14 @@ class _SettingsScreenState extends State<SettingsScreen> {
       appBar: AppBar(
         title: Center(
             child: Text(
-          'Ana Sayfa',
-          style: Theme.of(context).textTheme.headlineMedium,
+          'Ayarlar',
+          style: Theme.of(context).textTheme.headlineLarge,
         )),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -38,7 +39,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             // Drawer Header
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,

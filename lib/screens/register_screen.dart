@@ -16,10 +16,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Kayıt Ol')),
+        title: Center(
+            child: Text(
+          'Kayıt Ol',
+          style: Theme.of(context).textTheme.headlineLarge,
+        )),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -31,14 +37,14 @@ class _RegisterScreenState extends State<RegisterScreen> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -46,14 +52,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.lock),
+              leading: Icon(Icons.lock,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text("Kayıt ol"),
               onTap: () {
                 context.go("/register");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.lock_open),
+              leading: Icon(Icons.lock_open,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text("Giriş Yap"),
               onTap: () {
                 context.go("/login");
@@ -62,7 +70,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(Icons.settings,
+              color: Theme.of(context).colorScheme.primary,),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");

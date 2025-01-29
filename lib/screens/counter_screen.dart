@@ -30,12 +30,16 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Center(child: Text('Sayaçlar',
-        style: Theme.of(context).textTheme.headlineMedium,)),
+        title: Center(
+            child: Text(
+          'Sayaçlar',
+          style: Theme.of(context).textTheme.headlineLarge,
+        )),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -47,7 +51,8 @@ class _CounterScreenState extends State<CounterScreen> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor:
+                    Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,
@@ -62,42 +67,60 @@ class _CounterScreenState extends State<CounterScreen> {
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: Icon(
+                Icons.home,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ana Sayfa'),
               onTap: () {
                 context.go("/home");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: Icon(
+                Icons.person,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Profil'),
               onTap: () {
                 context.go("/profile");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.calendar_month),
+              leading: Icon(
+                Icons.calendar_month,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Takvim'),
               onTap: () {
                 context.go("/calendar");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.smoke_free),
+              leading: Icon(
+                Icons.smoke_free,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Sayaçlar'),
               onTap: () {
                 context.go("/counter");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.outlined_flag),
+              leading: Icon(
+                Icons.outlined_flag,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Hedefler'),
               onTap: () {
                 context.go("/goals");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.emoji_events),
+              leading: Icon(
+                Icons.emoji_events,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Başarımlar'),
               onTap: () {
                 context.go("/achievement");
@@ -106,7 +129,10 @@ class _CounterScreenState extends State<CounterScreen> {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(
+                Icons.settings,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");
@@ -288,24 +314,33 @@ class _CounterScreenState extends State<CounterScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Para Sayacı",
-                style: Theme.of(context).textTheme.headlineMedium),
-                const Icon(Icons.currency_lira,size: 35,),
+                    style: Theme.of(context).textTheme.headlineMedium),
+                const Icon(
+                  Icons.currency_lira,
+                  size: 35,
+                ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Günlük Sigara Maliyeti:48",
-                style: Theme.of(context).textTheme.headlineSmall),
-                const Icon(Icons.currency_lira,size: 25,),
+                    style: Theme.of(context).textTheme.headlineSmall),
+                const Icon(
+                  Icons.currency_lira,
+                  size: 25,
+                ),
               ],
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text("Toplam Biriktirilen Para: 12697",
-                style: Theme.of(context).textTheme.headlineSmall),
-                const Icon(Icons.currency_lira,size: 25,),
+                    style: Theme.of(context).textTheme.headlineSmall),
+                const Icon(
+                  Icons.currency_lira,
+                  size: 25,
+                ),
               ],
             ),
             const SizedBox(height: 24),
@@ -314,12 +349,12 @@ class _CounterScreenState extends State<CounterScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 Text("Miktarlar",
-                style: Theme.of(context).textTheme.headlineMedium),
+                    style: Theme.of(context).textTheme.headlineMedium),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Bir Günde İçilen Sigara Miktarı:",
-                    style: Theme.of(context).textTheme.headlineSmall),
+                        style: Theme.of(context).textTheme.headlineSmall),
                     IconButton(
                       onPressed: azalt,
                       icon: const Icon(Icons.remove, color: Colors.red),
@@ -339,7 +374,7 @@ class _CounterScreenState extends State<CounterScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text("Kullanılan Sigaranın Paket Fiyatı:",
-                    style: Theme.of(context).textTheme.headlineSmall),
+                        style: Theme.of(context).textTheme.headlineSmall),
                     const SizedBox(
                       width: 90,
                       child: TextField(
@@ -350,7 +385,9 @@ class _CounterScreenState extends State<CounterScreen> {
                     ),
                   ],
                 ),
-                const SizedBox(height: 24,),
+                const SizedBox(
+                  height: 24,
+                ),
                 const Divider(),
               ],
             ),

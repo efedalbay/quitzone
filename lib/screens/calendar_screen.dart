@@ -16,13 +16,14 @@ class CalendarScreen extends StatelessWidget {
         title: Center(
           child: Text(
             'Takvim',
-            style: Theme.of(context).textTheme.headlineMedium,
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: const Icon(CupertinoIcons.moon),
+            icon: Icon(CupertinoIcons.moon,
+            color: Theme.of(context).colorScheme.surface,),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -36,7 +37,7 @@ class CalendarScreen extends StatelessWidget {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
                 child: Icon(
                   CupertinoIcons.person_circle,
                   size: 50,
@@ -232,9 +233,9 @@ class CalendarScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     CalendarWidget(
                       icon: Icons.outlined_flag,
-                      title: "5 Gün Hedefinizi 7 Ocak 2025 Tarihinde Kazandınız",
+                      title: "5 Gün.",
                       subtitle:
-                          "5 Gün.",
+                          "5 Gün Hedefinizi 7 Ocak 2025 Tarihinde Kazandınız",
                       onTap: () {
                         context.go("/goals");
                       },
