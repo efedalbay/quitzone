@@ -10,7 +10,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,7 +26,7 @@ class LoadingScreen extends StatelessWidget {
                     width: 150,
                     height: 150,
                     child: Image.asset(
-                      'assets/images/logo.jpg',
+                      'assets/images/logo.png',
                       fit: BoxFit.contain,
                     ),
                   ),

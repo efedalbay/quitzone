@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-//import 'package:google_fonts/google_fonts.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ThemeProvider with ChangeNotifier {
   bool _isDark = false;
@@ -12,7 +12,7 @@ class ThemeProvider with ChangeNotifier {
 }
 
 const colors = {
-  "primary": Color.fromARGB(255, 65, 159, 217),
+  "primary": Color.fromARGB(255, 217, 0, 255),
   "onPrimary": Color.fromARGB(255, 255, 255, 255),
   "secondary": Color.fromARGB(255, 241, 241, 241),
   "onSecondary": Color.fromARGB(255, 82, 76, 100),
@@ -24,7 +24,7 @@ const colors = {
 };
 
 const darkColors = {
-  "primary": Color.fromARGB(255, 43, 82, 120),
+  "primary": Color.fromARGB(255, 157, 0, 255),
   "onPrimary": Color.fromARGB(255, 241, 241, 241),
   "secondary": Color.fromARGB(255, 32, 43, 54),
   "onSecondary": Color.fromARGB(255, 241, 241, 241),
@@ -48,6 +48,23 @@ final lightTheme = ThemeData(
     surface: colors["surface"]!,
     onSurface: colors["onSurface"]!,
   ),
+  textTheme: TextTheme(
+    bodySmall: GoogleFonts.roboto(),
+    bodyMedium: GoogleFonts.roboto(),
+    bodyLarge: GoogleFonts.roboto(),
+    labelSmall: GoogleFonts.roboto(),
+    labelMedium: GoogleFonts.roboto(),
+    labelLarge: GoogleFonts.roboto(),
+    titleSmall: GoogleFonts.roboto(),
+    titleMedium: GoogleFonts.roboto(),
+    titleLarge: GoogleFonts.roboto(),
+    headlineSmall: GoogleFonts.aBeeZee(),
+    headlineMedium: GoogleFonts.aBeeZee(),
+    headlineLarge: GoogleFonts.aBeeZee(),
+    displaySmall: GoogleFonts.abrilFatface(),
+    displayMedium: GoogleFonts.abrilFatface(),
+    displayLarge: GoogleFonts.abrilFatface(),
+  ),
 );
 
 final darkTheme = ThemeData(
@@ -62,5 +79,22 @@ final darkTheme = ThemeData(
     onError: darkColors["onError"]!,
     surface: darkColors["surface"]!,
     onSurface: darkColors["onSurface"]!,
+  ),
+  textTheme: TextTheme(
+    bodySmall: GoogleFonts.roboto(),
+    bodyMedium: GoogleFonts.roboto(),
+    bodyLarge: GoogleFonts.roboto(),
+    labelSmall: GoogleFonts.roboto(),
+    labelMedium: GoogleFonts.roboto(),
+    labelLarge: GoogleFonts.roboto(),
+    titleSmall: GoogleFonts.roboto(),
+    titleMedium: GoogleFonts.roboto(),
+    titleLarge: GoogleFonts.roboto(),
+    headlineSmall: GoogleFonts.aBeeZee(),
+    headlineMedium: GoogleFonts.aBeeZee(),
+    headlineLarge: GoogleFonts.aBeeZee(),
+    displaySmall: GoogleFonts.abrilFatface(),
+    displayMedium: GoogleFonts.abrilFatface(),
+    displayLarge: GoogleFonts.abrilFatface(),
   ),
 );

@@ -12,36 +12,40 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Profil')),
-        backgroundColor:  const Color(0xFFBB86FC),
+        title: Center(
+          child: Text(
+            'Ana Sayfa',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
           ),
         ],
       ),
+
+      // Drawer (Yan Menü)
       drawer: Drawer(
         child: Column(
           children: [
-            // Drawer Header
-            Container(
-              height: 250,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/logo2.jpg"),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Quit Zone',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+              ),
+              accountName: Text("Hoşgeldiniz"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             // Menü öğeleri
@@ -138,7 +142,9 @@ class ProfileScreen extends StatelessWidget {
           ),
           SizedBox(height: 24),
           FilledButton.icon(
-            onPressed: () {},
+            onPressed: () {
+              context.go("/login");
+            },
             icon: Icon(Icons.logout),
             label: Text("Hesaptan Çıkış Yap"),
             style: FilledButton.styleFrom(

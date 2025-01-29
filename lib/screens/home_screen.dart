@@ -14,8 +14,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       // AppBar
       appBar: AppBar(
-        title: const Center(child: Text('Ana Sayfa')),
-        backgroundColor: const Color(0xFFBB86FC),
+        title: Center(
+          child: Text(
+            'Ana Sayfa',
+            style: Theme.of(context).textTheme.headlineMedium,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
             icon: const Icon(CupertinoIcons.moon),
@@ -30,22 +35,19 @@ class HomeScreen extends StatelessWidget {
       drawer: Drawer(
         child: Column(
           children: [
-            // Drawer Header
-            Container(
-              height: 250,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/logo2.jpg"),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Quit Zone',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+              ),
+              accountName: Text("Hoşgeldiniz"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             // Menü öğeleri
@@ -117,7 +119,11 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Text("Sigarasız geçen zaman"),
+            Text(
+              "Sigarasız geçen zaman",
+              style: Theme.of(context).textTheme.headlineMedium,
+              
+            ),
             const SizedBox(height: 16),
             // Zaman Gösterimi
             Row(
@@ -154,7 +160,8 @@ class HomeScreen extends StatelessWidget {
                       child: const Column(
                         children: [
                           Text("İçilmeyen Sigaralar",
-                              textAlign: TextAlign.center),
+                              textAlign: TextAlign.center
+                              ),
                           SizedBox(height: 4),
                           Icon(Icons.smoke_free),
                           SizedBox(height: 4),
@@ -268,26 +275,156 @@ class HomeScreen extends StatelessWidget {
 
             //Takvim
             const SizedBox(height: 6),
-            TableCalendar(
-              firstDay: DateTime.utc(2000, 1, 1),
-              lastDay: DateTime.utc(2100, 12, 31),
-              focusedDay: DateTime.now(),
-              calendarFormat: CalendarFormat.month,
-              headerStyle: const HeaderStyle(
-                formatButtonVisible: false,
-                titleCentered: true,
-              ),
-              calendarStyle: const CalendarStyle(
-                todayDecoration: BoxDecoration(
-                  color: Colors.purple,
-                  shape: BoxShape.circle,
+            // ai
+            // TableCalendar(
+            //   firstDay: DateTime.utc(2000, 1, 1),
+            //   lastDay: DateTime.utc(2100, 12, 31),
+            //   focusedDay: DateTime.now(),
+            //   calendarFormat: CalendarFormat.month,
+            //   headerStyle: const HeaderStyle(
+            //     formatButtonVisible: false,
+            //     titleCentered: true,
+            //   ),
+            //   calendarStyle: const CalendarStyle(
+            //     todayDecoration: BoxDecoration(
+            //       color: Colors.purple,
+            //       shape: BoxShape.circle,
+            //     ),
+            //     selectedDecoration: BoxDecoration(
+            //       color: Colors.orange,
+            //       shape: BoxShape.circle,
+            //     ),
+            //   ),
+            // ),
+            //
+            //
+            // deneme 1
+            //
+            //
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     IconButton(
+            //       icon: const Icon(Icons.arrow_left),
+            //       onPressed: () {},
+            //     ),
+            //     const Text(
+            //       "Ocak 2025",
+            //       style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            //     ),
+            //     IconButton(
+            //       icon: const Icon(Icons.arrow_right),
+            //       onPressed: () {},
+            //     ),
+            //   ],
+            // ),
+            // const SizedBox(height: 12),
+            // const Row(
+            //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //   children: [
+            //     Text("Pzt"),Text("Sal"),Text("Çrş"),Text("Prş"),
+            //     Text("Cum"),Text("Cmt"),Text("Pazar"),
+            //   ],
+            // ),
+            // const SizedBox(height: 12),
+            // const Column(
+            //   children: [
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("29"),Text("30"),Text("31"),Text("1"),
+            //         Text("2"),Text("3"),Text("4")
+            //       ],
+            //     ),
+            //     SizedBox(height: 12),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("5"),Text("6"),Text("7"),Text("8"),
+            //         Text("9"),Text("10"),Text("11")
+            //       ],
+            //     ),
+            //     SizedBox(height: 12),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("12"),Text("13"),Text("14"),Text("15"),
+            //         Text("16"),Text("17"),Text("18")
+            //       ],
+            //     ),
+            //     SizedBox(height: 12),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("19"),Text("20"),Text("21"),Text("22"),
+            //         Text("23"),Text("24"),Text("25")
+            //       ],
+            //     ),
+            //     SizedBox(height: 12),
+            //     Row(
+            //       mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //       children: [
+            //         Text("26"),Text("27"),Text("28"),Text("29"),
+            //         Text("30"),Text("31"),Text("1")
+            //       ],
+            //     ),
+            //   ],
+            // ),
+            //
+            //
+            //deneme1 + ai
+            //
+            //
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                IconButton(
+                  icon: const Icon(Icons.arrow_left),
+                  onPressed: () {},
                 ),
-                selectedDecoration: BoxDecoration(
-                  color: Colors.orange,
-                  shape: BoxShape.circle,
+                const Text(
+                  "Ocak 2025",
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                 ),
-              ),
+                IconButton(
+                  icon: const Icon(Icons.arrow_right),
+                  onPressed: () {},
+                ),
+              ],
             ),
+            const SizedBox(height: 12),
+            const Row(
+              children: [
+                Expanded(child: Center(child: Text("Pzt"))),
+                Expanded(child: Center(child: Text("Sal"))),
+                Expanded(child: Center(child: Text("Çrş"))),
+                Expanded(child: Center(child: Text("Prş"))),
+                Expanded(child: Center(child: Text("Cum"))),
+                Expanded(child: Center(child: Text("Cmt"))),
+                Expanded(child: Center(child: Text("Pazar"))),
+              ],
+            ),
+            const SizedBox(height: 12),
+            Column(
+              children: [
+                for (var week in [
+                  ["29", "30", "31", "1", "2", "3", "4"],
+                  ["5", "6", "7", "8", "9", "10", "11"],
+                  ["12", "13", "14", "15", "16", "17", "18"],
+                  ["19", "20", "21", "22", "23", "24", "25"],
+                  ["26", "27", "28", "29", "30", "31", "1"]
+                ])
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 6.0),
+                    child: Row(
+                      children: [
+                        for (var day in week)
+                          Expanded(child: Center(child: Text(day))),
+                      ],
+                    ),
+                  ),
+              ],
+            )
           ],
         ),
       ),
@@ -296,7 +433,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  // Zaman Bilgisi Widget'ı
+  //Zaman Bilgisi Widget'ı
   Widget timeBox(String value, String label) {
     return Column(
       children: [

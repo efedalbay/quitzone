@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         themeMode: themeProvider.isDark ? ThemeMode.dark : ThemeMode.light,
         theme: lightTheme,
         darkTheme: darkTheme,
-        routerConfig: router, // go_router yapılandırmamızı kullan
-        debugShowCheckedModeBanner: false, // Debug bandını kaldır
+        routerConfig: router, 
+        debugShowCheckedModeBanner: false, 
       );
     });
   }
