@@ -31,6 +31,20 @@ class LoadingScreen extends StatelessWidget {
                     ),
                   ),
                 ),
+                const SizedBox(height: 30),
+                InkWell(
+                  onTap: ()=> context.go("/register"),
+                  child: Container(
+                    width: 200,
+                    height: 100,
+                    child: Expanded(
+                      child: Center(
+                        child: Text("QuıtZone",
+                        style: Theme.of(context).textTheme.headlineLarge,),
+                      ),
+                    ),
+                  ),
+                ),
 
                 const SizedBox(height: 30),
 

@@ -114,7 +114,7 @@ class AchievementScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surfaceVariant,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
                 ),
                 child: ListView(
                   padding: const EdgeInsets.all(24),
@@ -190,7 +190,7 @@ class AchievementScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

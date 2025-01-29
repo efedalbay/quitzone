@@ -43,7 +43,7 @@ class GoalScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -114,7 +114,7 @@ class GoalScreen extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: Theme.of(context).colorScheme.surfaceVariant,
-                  borderRadius: BorderRadius.vertical(top: Radius.circular(32)),
+                  borderRadius: const BorderRadius.vertical(top: Radius.circular(32)),
                 ),
                 child: ListView(
                   padding: const EdgeInsets.all(24),

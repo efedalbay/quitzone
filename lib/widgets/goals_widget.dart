@@ -25,7 +25,8 @@ class GoalsWidget extends StatelessWidget {
         ),
         title: Text(title),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.star_rate, size: 25),
+        trailing: Icon(Icons.star_rate, size: 25,
+        color: Theme.of(context).colorScheme.primary,),
       ),
     );
   }

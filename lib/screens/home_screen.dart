@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -245,7 +245,7 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             const SizedBox(height: 18),
-            Divider(),
+            const Divider(),
             // Sağlık Durumu ve Para Bilgileri
             Container(
               child: Row(
@@ -264,14 +264,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.smoke_free,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "3425",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -292,14 +292,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.currency_lira,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "12697₺",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -320,7 +320,7 @@ class HomeScreen extends StatelessWidget {
                   Expanded(
                     child: GestureDetector(
                       onTap: () {
-                        context.go("/health");
+                        context.go("/home");
                       },
                       child: Column(
                         children: [
@@ -329,14 +329,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.favorite,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "Sağlık Bilgileri",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -357,14 +357,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.timer,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "4 Gün Kazandınız.",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -394,14 +394,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.emoji_events,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "3 Başarımınız Var.",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -422,14 +422,14 @@ class HomeScreen extends StatelessWidget {
                             textAlign: TextAlign.center,
                             style: Theme.of(context).textTheme.headlineSmall,
                           ),
-                          SizedBox(height: 4),
+                          const SizedBox(height: 4),
                           Icon(
                             Icons.outlined_flag,
                             size: 30,
                             color: Theme.of(context).colorScheme.primary,
                           ),
-                          SizedBox(height: 4),
-                          Text(
+                          const SizedBox(height: 4),
+                          const Text(
                             "2 Hedefinizi Başardınız.",
                             style: TextStyle(
                                 fontSize: 14, fontWeight: FontWeight.bold),
@@ -443,7 +443,7 @@ class HomeScreen extends StatelessWidget {
             ),
 
             //Takvim
-            Divider(),
+            const Divider(),
             // ai
             // TableCalendar(
             //   firstDay: DateTime.utc(2000, 1, 1),
@@ -551,9 +551,9 @@ class HomeScreen extends StatelessWidget {
                   icon: const Icon(Icons.arrow_left),
                   onPressed: () {},
                 ),
-                const Text(
+                Text(
                   "Ocak 2025",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 IconButton(
                   icon: const Icon(Icons.arrow_right),

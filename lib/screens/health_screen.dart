@@ -42,7 +42,7 @@ class HealthScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -106,7 +106,7 @@ class HealthScreen extends StatelessWidget {
       body: Center(
         child: Text("Sağlık bilgileri"),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

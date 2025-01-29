@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class TrophyWidget extends StatelessWidget {
+class CalendarWidget extends StatelessWidget {
   final IconData icon;
   final String title;
   final String subtitle;
   final VoidCallback onTap;
 
-  const TrophyWidget({
+  const CalendarWidget({
     required this.icon,
     required this.title,
     required this.subtitle,
@@ -25,7 +25,7 @@ class TrophyWidget extends StatelessWidget {
         ),
         title: Text(title),
         subtitle: Text(subtitle),
-        trailing: Icon(Icons.military_tech, size: 25,
+        trailing: Icon(Icons.touch_app, size: 25,
         color: Theme.of(context).colorScheme.primary,),
       ),
     );

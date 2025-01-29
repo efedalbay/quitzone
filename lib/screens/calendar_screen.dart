@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:provider/provider.dart';
 import '../themes/themes.dart';
 import '../widgets/bottom_menu.dart';
+import '../widgets/calendar_widget.dart';
 
 class CalendarScreen extends StatelessWidget {
   const CalendarScreen({super.key});
@@ -42,7 +43,7 @@ class CalendarScreen extends StatelessWidget {
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                 ),
               ),
-              accountName: Text("Hoşgeldiniz"),
+              accountName: const Text("Hoşgeldiniz"),
               accountEmail: null,
               decoration: BoxDecoration(
                 color: Theme.of(context).colorScheme.primary,
@@ -104,7 +105,7 @@ class CalendarScreen extends StatelessWidget {
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -112,12 +113,12 @@ class CalendarScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 IconButton(
-                  icon: Icon(Icons.arrow_left),
+                  icon: const Icon(Icons.arrow_left),
                   onPressed: () {},
                 ),
-                const Text(
+                Text(
                   "Ocak 2025",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: Theme.of(context).textTheme.headlineSmall,
                 ),
                 IconButton(
                   icon: const Icon(Icons.arrow_right),
@@ -158,12 +159,74 @@ class CalendarScreen extends StatelessWidget {
                   ),
               ],
             ),
-            Divider(),
-            
+            const Divider(),
+            Expanded(
+              flex: 3,
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  borderRadius:
+                      const BorderRadius.vertical(top: Radius.circular(32)),
+                ),
+                child: ListView(
+                  padding: const EdgeInsets.all(24),
+                  children: [
+                    CalendarWidget(
+                      icon: Icons.emoji_events,
+                      title: "İlk Gün",
+                      subtitle:
+                          "İlk Gün Başarımını 2 Ocak 2025 Tarihinde Kazandınız.",
+                      onTap: () {
+                        context.go("/achievement");
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    CalendarWidget(
+                      icon: Icons.currency_lira,
+                      title: "100 TL",
+                      subtitle: "100 TL Başarımını 4 Ocak 2025 Tarihinde Kazandınız.",
+                      onTap: () {
+                        context.go("/achievement");
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    CalendarWidget(
+                      icon: Icons.emoji_events,
+                      title: "10 Gün",
+                      subtitle: "10 Gün Başarımını 12 Ocak 2025 Tarihinde Kazandınız.",
+                      onTap: () {
+                        context.go("/achievement");
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    CalendarWidget(
+                      icon: Icons.outlined_flag,
+                      title: "3 Kupa",
+                      subtitle:
+                          "3 Kupa Hedefinizi 12 Ocak 2025 Tarihinde Kazandınız.",
+                      onTap: () {
+                        context.go("/goals");
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                    CalendarWidget(
+                      icon: Icons.outlined_flag,
+                      title: "5 Gün Hedefinizi 7 Ocak 2025 Tarihinde Kazandınız",
+                      subtitle:
+                          "5 Gün.",
+                      onTap: () {
+                        context.go("/goals");
+                      },
+                    ),
+                    const SizedBox(height: 16),
+                  ],
+                ),
+              ),
+            ),
           ],
         ),
       ),
-      bottomNavigationBar: BottomMenu(),
+      bottomNavigationBar: const BottomMenu(),
     );
   }
 }

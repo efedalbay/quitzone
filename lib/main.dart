@@ -4,7 +4,7 @@ import 'routes/app_router.dart';
 import 'themes/themes.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized(); // Flutter widget'larını başlat
+  WidgetsFlutterBinding.ensureInitialized(); 
   runApp(
     ChangeNotifierProvider(
       create: (_) => ThemeProvider(),
@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<ThemeProvider>(builder: (context, themeProvider, child) {
       return MaterialApp.router(
-        title: 'Flutter App',
+        title: 'QuitZone',
         themeMode: themeProvider.isDark ? ThemeMode.dark : ThemeMode.light,
         theme: lightTheme,
         darkTheme: darkTheme,
