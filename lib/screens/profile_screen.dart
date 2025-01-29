@@ -14,7 +14,7 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Center(
           child: Text(
-            'Ana Sayfa',
+            'Profil',
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

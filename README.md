@@ -1,4 +1,4 @@
-# Flutter Projesi
+# Flutter Projesi-QuitZone
 
   
 
@@ -23,7 +23,7 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 - Ad Soyad: Erva Efe DALBAY
 - Öğrenci No: 2320161003
 - Bölüm: Bilgisayar Programcılığı
-- [GitHub](https://github.com/efedalbay)
+- GitHub:[ efedalbay](https://github.com/efedalbay)
 
   
 
@@ -56,9 +56,9 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 
 ### Gereksinimler
 
-- Flutter SDK (sürüm X.X.X)
+- Flutter SDK (^3.5.4)
 
-- Dart SDK (sürüm X.X.X)
+- Dart SDK (^3.5.4)
 
 
   
@@ -68,7 +68,7 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 
 ```bash
 
-git  clone [https://github.com/efedalbay/quitsmoke]
+git  clone [https://github.com/efedalbay/quitzone]
 
 ```
 
@@ -126,9 +126,14 @@ lib/
 
 ## Ekran Görüntüleri
 
-![ekran resmi]()
 
-  
+
+
+
+##  Demo Video
+
+
+
 
 ## Projeye Katkı Sağlama
 

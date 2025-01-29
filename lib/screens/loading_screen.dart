@@ -10,7 +10,7 @@ class LoadingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+      backgroundColor: Theme.of(context).colorScheme.onSecondaryContainer,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
