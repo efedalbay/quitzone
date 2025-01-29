@@ -14,18 +14,24 @@ class BottomMenu extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           IconButton(
+            hoverColor: Theme.of(context).colorScheme.onSecondary,
+            color: Theme.of(context).colorScheme.primary,
             onPressed: () {
               context.go("/calendar");
             },
             icon: const Icon(Icons.calendar_month),
           ),
           IconButton(
+            hoverColor: Theme.of(context).colorScheme.onSecondary,
+            color: Theme.of(context).colorScheme.primary,
             onPressed: () {
               context.go("/home");
             },
             icon: const Icon(Icons.home),
           ),
           IconButton(
+            hoverColor: Theme.of(context).colorScheme.onSecondary,
+            color: Theme.of(context).colorScheme.primary,
             onPressed: () {
               context.go("/profile");
             },

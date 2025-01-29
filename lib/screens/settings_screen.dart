@@ -17,11 +17,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Ana Sayfa')),
-        backgroundColor:  const Color(0xFFBB86FC),
+        title: Center(
+            child: Text(
+          'Ana Sayfa',
+          style: Theme.of(context).textTheme.headlineMedium,
+        )),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
-            icon: Icon(CupertinoIcons.moon),
+            icon: const Icon(CupertinoIcons.moon),
             onPressed: () {
               context.read<ThemeProvider>().toggleTheme();
             },
@@ -32,68 +36,77 @@ class _SettingsScreenState extends State<SettingsScreen> {
         child: Column(
           children: [
             // Drawer Header
-            Container(
-              height: 250,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/images/logo2.jpg"),
-                  const SizedBox(height: 10),
-                  const Text(
-                    'Quit Zone',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontSize: 18,
-                    ),
-                  ),
-                ],
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+                child: Icon(
+                  CupertinoIcons.person_circle,
+                  size: 50,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                ),
+              ),
+              accountName: const Text("Hoşgeldiniz"),
+              accountEmail: null,
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primary,
               ),
             ),
             // Menü öğeleri
             ListTile(
-              leading: const Icon(Icons.home),
+              leading: Icon(
+                Icons.home,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ana Sayfa'),
               onTap: () {
                 context.go("/home");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person),
+              leading: Icon(
+                Icons.person,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Profil'),
               onTap: () {
                 context.go("/profile");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.calendar_month),
+              leading: Icon(
+                Icons.calendar_month,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Takvim'),
               onTap: () {
                 context.go("/calendar");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.schedule),
-              title: const Text('Zaman'),
-              onTap: () {
-                context.go("/time");
-              },
-            ),
-            ListTile(
-              leading: const Icon(Icons.smoke_free),
+              leading: Icon(
+                Icons.smoke_free,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Sayaçlar'),
               onTap: () {
                 context.go("/counter");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.outlined_flag),
+              leading: Icon(
+                Icons.outlined_flag,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Hedefler'),
               onTap: () {
                 context.go("/goals");
               },
             ),
             ListTile(
-              leading: const Icon(Icons.emoji_events),
+              leading: Icon(
+                Icons.emoji_events,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Başarımlar'),
               onTap: () {
                 context.go("/achievement");
@@ -102,7 +115,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
             const Spacer(),
             const Divider(),
             ListTile(
-              leading: const Icon(Icons.settings),
+              leading: Icon(
+                Icons.settings,
+                color: Theme.of(context).colorScheme.primary,
+              ),
               title: const Text('Ayarlar'),
               onTap: () {
                 context.go("/settings");
@@ -114,8 +130,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
       body: ListView(
         children: [
           ListTile(
-            leading: Icon(Icons.palette),
-            title: Text('Tema'),
+            leading: Icon(
+              Icons.palette,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Tema'),
             trailing: Switch(
               value: Theme.of(context).brightness == Brightness.dark,
               onChanged: (value) {
@@ -125,8 +144,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.notifications),
-            title: Text('Bildirimler'),
+            leading: Icon(
+              Icons.notifications,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Bildirimler'),
             trailing: Switch(
               value: true,
               onChanged: (value) {},
@@ -134,8 +156,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.language),
-            title: Text('Dil'),
+            leading: Icon(
+              Icons.language,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Dil'),
             trailing: DropdownButton<String>(
               value: 'TR',
               items: ['TR', 'EN'].map((String value) {
@@ -149,26 +174,44 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.info),
-            title: Text('Uygulama Hakkında'),
-            trailing: Icon(Icons.arrow_forward_ios, size: 16),
+            hoverColor: Theme.of(context).colorScheme.onSecondary,
+            leading: Icon(
+              Icons.info,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Uygulama Hakkında'),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             onTap: () {},
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.privacy_tip),
-            title: Text('Gizlilik Politikası'),
-            trailing: Icon(Icons.arrow_forward_ios, size: 16),
+            hoverColor: Theme.of(context).colorScheme.onSecondary,
+            leading: Icon(
+              Icons.privacy_tip,
+              color: Theme.of(context).colorScheme.primary,
+            ),
+            title: const Text('Gizlilik Politikası'),
+            trailing: Icon(
+              Icons.arrow_forward_ios,
+              size: 16,
+              color: Theme.of(context).colorScheme.primary,
+            ),
             onTap: () {},
           ),
           const Divider(),
           ListTile(
-            leading: Icon(Icons.delete, color: Colors.red),
-            title: Text(
+            leading: const Icon(Icons.delete, color: Colors.red),
+            title: const Text(
               'Hesabı Sil',
               style: TextStyle(color: Colors.red),
             ),
-            onTap: () {},
+            onTap: () {
+              context.go("/register");
+            },
           ),
         ],
       ),

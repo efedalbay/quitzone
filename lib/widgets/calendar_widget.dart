@@ -18,6 +18,8 @@ class CalendarWidget extends StatelessWidget {
     return Card(
       elevation: 0,
       child: ListTile(
+        hoverColor:Theme.of(context).colorScheme.onSecondary,
+        tileColor: Theme.of(context).colorScheme.secondary,
         onTap: onTap,
         leading: CircleAvatar(
           backgroundColor: Theme.of(context).colorScheme.primary,

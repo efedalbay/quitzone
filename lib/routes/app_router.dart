@@ -3,7 +3,7 @@ import '../screens/achievement_screen.dart';
 import '../screens/calendar_screen.dart';
 import '../screens/counter_screen.dart';
 import '../screens/goal_screen.dart';
-import '../screens/health_screen.dart';
+
 import '../screens/home_screen.dart';
 import '../screens/loading_screen.dart';
 import '../screens/login_screen.dart';
@@ -46,10 +46,6 @@ final router = GoRouter(
     GoRoute(
       path: '/register',
       builder: (context, state) => const RegisterScreen(),
-    ),
-    GoRoute(
-      path: '/health',
-      builder: (context, state) => const HealthScreen(),
     ),
     GoRoute(
       path: '/goals',
