@@ -30,8 +30,9 @@ class _CounterScreenState extends State<CounterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Center(child: Text('Sayaçlar')),
-        backgroundColor: const Color(0xFFBB86FC),
+        title: Center(child: Text('Sayaçlar',
+        style: Theme.of(context).textTheme.headlineMedium,)),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         actions: [
           IconButton(
             icon: const Icon(CupertinoIcons.moon),
