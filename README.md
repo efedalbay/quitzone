@@ -153,6 +153,7 @@ lib/
 
 ##  Demo Video
 [[https://www.youtube.com/watch?v=Qi2PD_iM4p0] (QuitZone Demo Video)]
+https://github.com/user-attachments/assets/147a5699-8b9b-4476-baf9-1e3ab2fa6de1
 
 
 
