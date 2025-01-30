@@ -15,7 +15,7 @@ Bu uygulama, kullanıcılarına sigarayı bırakma yolunda yardım etme amacı i
 ## Ekibimiz
 
 -  **Danışman:**  
-[https://github.com/keyvanarasteh](Keyvan Arasteh)
+[[https://github.com/keyvanarasteh](Keyvan Arasteh)]
 
 
 -  **Takım Üyeleri:**
@@ -152,7 +152,7 @@ lib/
 
 
 ##  Demo Video
-
+[[https://www.youtube.com/watch?v=Qi2PD_iM4p0] (QuitZone Demo Video)]
 
 
 
