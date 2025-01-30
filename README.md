@@ -126,7 +126,28 @@ lib/
 
 ## Ekran Görüntüleri
 
-
+![loading](https://github.com/user-attachments/assets/515d23bc-039f-491a-98cc-17044f709c7d)
+![register](https://github.com/user-attachments/assets/8576e9f8-6fdc-492e-9739-8b85f6094516)
+![login](https://github.com/user-attachments/assets/4998da5d-ab89-41ea-aef0-973026c4184c)
+![home](https://github.com/user-attachments/assets/1b76024f-8546-439d-9a38-ac3454639c2e)
+![drawer](https://github.com/user-attachments/assets/949b1627-4c63-4411-a344-89baf2335f04)
+![profile](https://github.com/user-attachments/assets/195c3a23-47b6-4ec1-aa9c-1d984e2613b7)
+![calendar](https://github.com/user-attachments/assets/d1f1f25c-d0ba-46f8-988d-560f6b59e780)
+![counter](https://github.com/user-attachments/assets/2178fd30-6d1c-405a-9eba-76db97a4afab)
+![goal](https://github.com/user-attachments/assets/c96a5918-e957-4c58-a8e6-373871c1ebcb)
+![achievement](https://github.com/user-attachments/assets/e4f1d946-ecbf-4414-8e18-b42dc9c0c94f)
+![setting](https://github.com/user-attachments/assets/001cc3dd-f5c1-4348-801d-12b1d2b45620)
+![dregister](https://github.com/user-attachments/assets/fe5da4a7-91a3-429e-90ad-1c1e22525f85)
+![dlogin](https://github.com/user-attachments/assets/e14bb0b8-c168-4024-92db-bddd22f6358e)
+![dhome](https://github.com/user-attachments/assets/77d43d67-7059-4501-8590-9c39a61cf1b8)
+![ddrawer](https://github.com/user-attachments/assets/18f14fa6-d15f-43dc-8b58-10d7084bbab1)
+![dprofile](https://github.com/user-attachments/assets/14598b3a-67a3-427a-b1b1-6ca537c51e78)
+![dcalendar](https://github.com/user-attachments/assets/9afe80bf-6ab1-4a02-9160-fd825b42e879)
+![dcounter](https://github.com/user-attachments/assets/f3d6a4ff-d473-4a59-a9b9-307032b44f67)
+![dgoal](https://github.com/user-attachments/assets/04180d5a-ab84-4880-bc66-e43190d6c5f3)
+![dachievement](https://github.com/user-attachments/assets/035ad308-d740-4801-9861-6e403ba85f8c)
+![dsetting](https://github.com/user-attachments/assets/a9e46c6b-fb51-4d70-bbf9-323576668714)
+![logo](https://github.com/user-attachments/assets/8fce3468-a061-438e-be55-7a04b033ae49)
 
 
 
